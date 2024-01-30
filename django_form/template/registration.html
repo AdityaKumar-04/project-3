@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="main">
+
+    <div class="main-1">
+        <div class="content">
+            <form action="/registration" method="POST">
+                {% csrf_token %}
+
+                <h2 style="text-align: center;">Registration</h2>
+                <div class="first">
+                    <div class="first-na">
+                        <label>First Name:</label>
+                        <span>{{form.first_name}}</span>
+                        
+                    </div>
+                    <div class="first-na">
+                        <label for="">Last Name:</label>
+                        <span>{{form.last_name}}</span>
+                    </div>
+                </div>
+                <div class="first">
+                    <div class="first-na">
+                        <label>Email:</label>
+                        <span>{{form.email}}</span>
+                    </div>
+                    <div class="first-na">
+                        <label>Username:</label>
+                        <span>{{form.username}}</span>
+                    </div>
+                </div>
+                <div class="first">
+                    <div class="first-na">
+                        <label>Password:</label>
+                        <span>{{form.password}}</span>
+                    </div>
+                    <div class="first-na">
+                        <label>Confirm Password:</label>
+                        <span>{{form.confirm_password}}</span>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button type="submit" class="btna">Submit</button>
+                </div>
+                <div style="color: red; text-decoration: none; margin-top: 5px; list-style: none;">{{ form.email.errors }}</div>
+                <div style="color: red; text-decoration: none; margin-top: 5; list-style: none;">{{ form.non_field_errors }}</div>
+                <p><a href="/">Login</a></p>
+               
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+</section>
+
+{% endblock %}
